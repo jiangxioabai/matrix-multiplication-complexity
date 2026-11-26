@@ -24,10 +24,6 @@ We prove lower bounds, give algorithms, and characterize complexity trade-offs f
 
 Some bounds use square and rectangular matrix multiplication results reported in OpenAI preprints. The individual papers specify these dependencies. See the [OpenAI square-exponent preprint](https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md) and the [square and rectangular exponent results](https://github.com/openai/math/blob/main/lean/docs/107.md).
 
-<p align="center">
-  <a href="./assets/research-map.png"><img src="./assets/research-map.png" width="760" alt="Research map. Matrix multiplication connects two strands: attention kernels, approximation, preprocessing, and resources; and related problems in Top-1 prediction, delta-rule recurrence, and product verification."></a>
-</p>
-
 ## Paper index
 
 Click a title for the full abstract or a thumbnail for the figure and its caption.
