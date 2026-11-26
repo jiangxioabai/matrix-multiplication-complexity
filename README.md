@@ -7,16 +7,13 @@
 
 <p align="center">
   Institute of Software, Chinese Academy of Sciences<br>
-  School of Computer Science and Technology, University of Chinese Academy of Sciences
-</p>
-
-<p align="center">
+  School of Computer Science and Technology, University of Chinese Academy of Sciences<br>
   <a href="mailto:jiangt@ios.ac.cn" aria-label="Email Tao Jiang">jiangt@ios.ac.cn</a> ·
   <a href="mailto:gaomb@ios.ac.cn" aria-label="Email Minbo Gao">gaomb@ios.ac.cn</a>
 </p>
 
 <p align="center">
-  <a href="https://jiangxioabai.github.io/research-papers/"><strong>Abstract pages</strong></a> ·
+  <a href="https://jiangxioabai.github.io/research-papers/"><strong>Paper website</strong></a> ·
   <a href="#paper-index"><strong>Paper index</strong></a> ·
   <a href="#research-results"><strong>Research results</strong></a> ·
   <a href="#how-to-cite"><strong>How to cite</strong></a>
@@ -24,7 +21,7 @@
 
 ---
 
-How much computation does attention require, and when is it as hard as matrix multiplication? These preprints study how the answer changes with the attention kernel, preprocessing, storage, memory traffic, and parallel depth. Two companion papers ask whether the matrix multiplication exponent also governs problems that return only winning indices or a yes/no verification result.
+These preprints study the arithmetic cost, memory demands, and parallel depth of attention and related computations. Matrix multiplication provides a common reference for the results.
 
 <p align="center">
   <a href="./assets/research-map.png"><img src="./assets/research-map.png" width="760" alt="Research map. Matrix multiplication connects two strands: attention kernels, approximation, preprocessing, and resources; and related problems in Top-1 prediction, delta-rule recurrence, and product verification."></a>
@@ -34,22 +31,22 @@ How much computation does attention require, and when is it as hard as matrix mu
 
 ### Attention
 
-| Paper | Main result | Read and cite |
+| Paper and abstract | Main result | PDF and citation |
 | --- | --- | :---: |
-| **Higher-order attention** | Matches the matrix multiplication exponent for Strassen attention and gives a faster algorithm for tensor attention. | [PDF](./preprints/strassen-and-tensor-attention/paper.pdf) · [BibTeX](./preprints/strassen-and-tensor-attention/README.md#citation) |
-| **Polynomial attention** | Determines the exact exponent for quadratic attention and gives degree-dependent lower bounds for higher even degrees. | [PDF](./preprints/exact-polynomial-attention/paper.pdf) · [BibTeX](./preprints/exact-polynomial-attention/README.md#citation) |
-| **Preprocessed softmax attention** | Obtains a generic matrix multiplication lower bound even after arbitrary preprocessing of the key–value cache. | [PDF](./preprints/preprocessed-softmax-attention/paper.pdf) · [BibTeX](./preprints/preprocessed-softmax-attention/README.md#citation) |
-| **Attention backpropagation** | Determines the optimal work exponent for computing value gradients as a function of the forward-pass storage budget. | [PDF](./preprints/memory-recomputation-attention/paper.pdf) · [BibTeX](./preprints/memory-recomputation-attention/README.md#citation) |
-| **Attention I/O complexity** | Gives matching square-width I/O exponents, conditional on results from a matrix multiplication preprint. | [PDF](./preprints/unrestricted-attention-io/paper.pdf) · [BibTeX](./preprints/unrestricted-attention-io/README.md#citation) |
-| **Arbitrarily accurate softmax attention** | Recovers the rectangular matrix multiplication exponent when a bounded-size circuit family can achieve every positive error tolerance. | [PDF](./preprints/arbitrarily-accurate-softmax-attention/paper.pdf) · [BibTeX](./preprints/arbitrarily-accurate-softmax-attention/README.md#citation) |
+| **[Higher-order attention](https://jiangxioabai.github.io/research-papers/preprints/strassen-and-tensor-attention/)** | Matches the matrix multiplication exponent for Strassen attention and gives a faster algorithm for tensor attention. | [PDF](./preprints/strassen-and-tensor-attention/paper.pdf) · [BibTeX](./preprints/strassen-and-tensor-attention/README.md#citation) |
+| **[Polynomial attention](https://jiangxioabai.github.io/research-papers/preprints/exact-polynomial-attention/)** | Determines the exact exponent for quadratic attention and gives degree-dependent lower bounds for higher even degrees. | [PDF](./preprints/exact-polynomial-attention/paper.pdf) · [BibTeX](./preprints/exact-polynomial-attention/README.md#citation) |
+| **[Preprocessed softmax attention](https://jiangxioabai.github.io/research-papers/preprints/preprocessed-softmax-attention/)** | Obtains a generic matrix multiplication lower bound even after arbitrary preprocessing of the key–value cache. | [PDF](./preprints/preprocessed-softmax-attention/paper.pdf) · [BibTeX](./preprints/preprocessed-softmax-attention/README.md#citation) |
+| **[Attention backpropagation](https://jiangxioabai.github.io/research-papers/preprints/memory-recomputation-attention/)** | Determines the optimal work exponent for computing value gradients as a function of the forward-pass storage budget. | [PDF](./preprints/memory-recomputation-attention/paper.pdf) · [BibTeX](./preprints/memory-recomputation-attention/README.md#citation) |
+| **[Attention I/O complexity](https://jiangxioabai.github.io/research-papers/preprints/unrestricted-attention-io/)** | Gives matching square-width I/O exponents, conditional on results from a matrix multiplication preprint. | [PDF](./preprints/unrestricted-attention-io/paper.pdf) · [BibTeX](./preprints/unrestricted-attention-io/README.md#citation) |
+| **[Arbitrarily accurate softmax attention](https://jiangxioabai.github.io/research-papers/preprints/arbitrarily-accurate-softmax-attention/)** | Recovers the rectangular matrix multiplication exponent when a bounded-size circuit family can achieve every positive error tolerance. | [PDF](./preprints/arbitrarily-accurate-softmax-attention/paper.pdf) · [BibTeX](./preprints/arbitrarily-accurate-softmax-attention/README.md#citation) |
 
 ### Prediction, recurrence, and verification
 
-| Paper | Main result | Read and cite |
+| Paper and abstract | Main result | PDF and citation |
 | --- | --- | :---: |
-| **Batched Top-1 prediction** | Matches the matrix multiplication exponent at square width, even though the output contains only the winning indices. | [PDF](./preprints/exact-batched-top1/paper.pdf) · [BibTeX](./preprints/exact-batched-top1/README.md#citation) |
-| **Exact delta-rule computation** | Gives parallel work bounds conditional on claimed matrix multiplication exponents and an unconditional reduction from triangular substitution. | [PDF](./preprints/delta-rule-work-depth/paper.pdf) · [BibTeX](./preprints/delta-rule-work-depth/README.md#citation) |
-| **Deterministic matrix product verification** | Shows that verifying a claimed real matrix product has the same arithmetic exponent as computing it. | [PDF](./preprints/deterministic-matrix-product-verification/paper.pdf) · [BibTeX](./preprints/deterministic-matrix-product-verification/README.md#citation) |
+| **[Batched Top-1 prediction](https://jiangxioabai.github.io/research-papers/preprints/exact-batched-top1/)** | Matches the matrix multiplication exponent at square width, even though the output contains only the winning indices. | [PDF](./preprints/exact-batched-top1/paper.pdf) · [BibTeX](./preprints/exact-batched-top1/README.md#citation) |
+| **[Exact delta-rule computation](https://jiangxioabai.github.io/research-papers/preprints/delta-rule-work-depth/)** | Gives parallel work bounds conditional on claimed matrix multiplication exponents and an unconditional reduction from triangular substitution. | [PDF](./preprints/delta-rule-work-depth/paper.pdf) · [BibTeX](./preprints/delta-rule-work-depth/README.md#citation) |
+| **[Deterministic matrix product verification](https://jiangxioabai.github.io/research-papers/preprints/deterministic-matrix-product-verification/)** | Shows that verifying a claimed real matrix product has the same arithmetic exponent as computing it. | [PDF](./preprints/deterministic-matrix-product-verification/paper.pdf) · [BibTeX](./preprints/deterministic-matrix-product-verification/README.md#citation) |
 
 ## Research results
 
