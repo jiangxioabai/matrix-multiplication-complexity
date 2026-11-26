@@ -20,9 +20,11 @@
 
 ---
 
-We prove lower bounds, give algorithms, and characterize complexity trade-offs for attention, batched prediction, recurrent computation, and matrix product verification. Matrix multiplication provides a common benchmark across these problems.
+For almost every key matrix and every nonconstant value vector, exact softmax attention retains the rectangular matrix multiplication exponent even after arbitrary cache preprocessing. Deterministically checking a real matrix product has the same arithmetic exponent as computing it.
 
-Some bounds use square and rectangular matrix multiplication results reported in OpenAI preprints. The individual papers specify these dependencies. See the [OpenAI square-exponent preprint](https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md) and the [square and rectangular exponent results](https://github.com/openai/math/blob/main/lean/docs/107.md).
+The other papers cover higher-order and polynomial attention, approximation, backpropagation and memory I/O, batched Top-1 prediction, and parallel delta-rule computation.
+
+Some bounds use results from the [OpenAI square-exponent preprint](https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md) and the [accompanying square and rectangular exponent results](https://github.com/openai/math/blob/main/lean/docs/107.md).
 
 ## Paper index
 
