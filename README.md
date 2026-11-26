@@ -1,8 +1,8 @@
 <h1 align="center">Matrix Multiplication and the Complexity of Attention</h1>
 
 <p align="center">
-  <strong>Tao Jiang</strong> and <strong>Minbo Gao</strong><br>
-  <em>Co-first authors with equal contribution on every preprint in this collection.</em>
+  <strong>Tao Jiang</strong><sup>*</sup> and <strong>Minbo Gao</strong><sup>*</sup><br>
+  <em>* Equal contribution (co-first authors).</em>
 </p>
 
 <p align="center">
