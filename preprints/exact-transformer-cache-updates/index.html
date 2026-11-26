@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Exact Transformer Cache Updates Are as Hard as Matrix Multiplication</title>
+  <link rel="canonical" href="https://jiangxioabai.github.io/matrix-multiplication-complexity/preprints/exact-transformer-cache-updates/">
+  <link rel="stylesheet" href="../../assets/pages.css">
+  <meta name="description" content="Abstract and PDF of Exact Transformer Cache Updates Are as Hard as Matrix Multiplication, a preprint by Tao Jiang and Minbo Gao.">
+  <meta name="citation_title" content="Exact Transformer Cache Updates Are as Hard as Matrix Multiplication">
+  <meta name="citation_author" content="Tao Jiang">
+  <meta name="citation_author" content="Minbo Gao">
+  <meta name="citation_publication_date" content="2026/11/26">
+  <meta name="citation_pdf_url" content="https://jiangxioabai.github.io/matrix-multiplication-complexity/preprints/exact-transformer-cache-updates/paper.pdf">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <nav class="shell nav" aria-label="Site navigation">
+      <a class="brand" href="../../">Matrix Multiplication</a>
+      <a href="https://github.com/jiangxioabai/matrix-multiplication-complexity">GitHub repository</a>
+    </nav>
+  </header>
+  <main id="main" class="shell paper">
+    <header class="paper-heading">
+      <p class="kicker">Cache updates</p>
+      <h1>Exact Transformer Cache Updates Are as Hard as Matrix Multiplication</h1>
+      <p class="authors">Tao Jiang<sup>*</sup> and Minbo Gao<sup>*</sup></p>
+      <p class="credit">* Equal contribution (co-first authors).</p>
+      <p class="publication-date">First posted <time datetime="2026-11-26">November 26, 2026</time></p>
+      <div class="paper-links">
+        <a class="action" href="paper.pdf" type="application/pdf">Read PDF</a>
+        <a href="#citation">BibTeX</a>
+      </div>
+    </header>
+    <section class="reading" aria-labelledby="abstract">
+      <h2 id="abstract">Abstract</h2>
+      <p>Transformer inference stores the keys and values of every layer, which raises the question of how cheaply this cache can be updated exactly when an earlier token of the context is edited. We study this question for causal attention-only Transformers in a model where the context and weights may be preprocessed arbitrarily, only the edit arrives online, and the new cache is computed by a circuit with arithmetic, exponential, and logarithm gates; lower bounds for computing attention from scratch do not apply in this model. We show that for three layers, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>N</mi></mrow></math> tokens, and width <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>d</mi><mo>&#x0003D;</mo><mi>&#x00398;</mi><mo stretchy="false">&#x00028;</mo><mi>N</mi><mo stretchy="false">&#x00029;</mo></mrow></math>, changing a single scalar coordinate of the first token requires at least half the tensor rank of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>n</mi><mo>&#x000D7;</mo><mi>n</mi><mo>&#x000D7;</mo><mo stretchy="false">&#x00028;</mo><mi>d</mi><mo>&#x02212;</mo><mn>4</mn><mo stretchy="false">&#x00029;</mo></mrow></math> matrix multiplication with <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>n</mi><mo>&#x0003D;</mo><mi>&#x0230A;</mi><mo stretchy="false">&#x00028;</mo><mi>N</mi><mo>&#x02212;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo><mo>&#x0002F;</mo><mn>2</mn><mi>&#x0230B;</mi></mrow></math>, so the exact update costs <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mi>&#x003C9;</mi><mo>&#x0002B;</mo><mi>o</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></msup></mrow></math> and is no cheaper than recomputation. The proof turns any update circuit into a bilinear algorithm for matrix multiplication by differentiating twice, first in the preprocessed data and then in the induced edge coefficients, and applies this to a cache block whose attention weights are algebraically independent along one curve. We also determine the update exponent for every fixed depth, polynomial width, and polynomial number of edits, which shows that depth three is exactly where a single edit becomes as hard as matrix multiplication.</p>
+    </section>
+    <figure class="reading paper-figure" id="paper-figure">
+      <img src="figure.png" width="760" height="510" loading="lazy" alt="Exact cache-update exponents versus width for one, two, and at least three layers">
+      <figcaption>Update exponents after one edit. The one- and two-layer curves are unconditional. The curve for three or more layers uses the stated rectangular matrix multiplication formula.</figcaption>
+    </figure>
+    <section class="reading citation" aria-labelledby="citation">
+      <h2 id="citation">Citation</h2>
+      <pre><code>@unpublished{jiang-gao-exact-transformer-cache-updates,
+  title  = {Exact {Transformer} Cache Updates Are as Hard as Matrix Multiplication},
+  author = {Jiang, Tao and Gao, Minbo},
+  year   = {2026},
+  note   = {Preprint}
+}</code></pre>
+    </section>
+  </main>
+  <footer class="shell footer">Tao Jiang and Minbo Gao</footer>
+</body>
+</html>
