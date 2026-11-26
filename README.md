@@ -126,6 +126,12 @@ How much work is needed to parallelize the delta-rule recurrence used in DeltaNe
 
 </details>
 
+<p align="center">
+  <img src="./assets/delta-rule-work-depth.png" width="440" alt="Work exponent versus depth exponent for exact delta-rule computation at widths d = N and d = square root of N">
+</p>
+
+*From Figure 1 of the [delta-rule preprint](./preprints/delta-rule-work-depth/paper.pdf). Solid curves show upper bounds conditional on the claimed matrix multiplication exponents. Dashed lines show unconditional lower bounds.*
+
 ### Matrix product verification
 
 <details>
