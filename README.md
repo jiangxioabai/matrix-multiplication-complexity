@@ -20,11 +20,7 @@
 
 ---
 
-For almost every key matrix and every nonconstant value vector, exact softmax attention retains the rectangular matrix multiplication exponent even after arbitrary cache preprocessing. Deterministically checking a real matrix product has the same arithmetic exponent as computing it.
-
-The other papers cover higher-order and polynomial attention, approximation, backpropagation and memory I/O, batched Top-1 prediction, and parallel delta-rule computation.
-
-Some bounds use results from the [OpenAI square-exponent preprint](https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md) and the [accompanying square and rectangular exponent results](https://github.com/openai/math/blob/main/lean/docs/107.md).
+A standard attention algorithm forms the query–key score matrix and uses it to compute a weighted sum for each query. Our starting question is whether computing those sums can be asymptotically cheaper than forming the scores.
 
 ## Paper index
 
@@ -52,3 +48,7 @@ Click a title for the full abstract or a thumbnail for the figure and its captio
 ## How to cite
 
 Use the BibTeX link for the specific preprint you are citing. Each entry gives the full paper title and lists both co-first authors.
+
+## Research background
+
+Some bounds use results from the [OpenAI square-exponent preprint](https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md) and the [accompanying square and rectangular exponent results](https://github.com/openai/math/blob/main/lean/docs/107.md).
