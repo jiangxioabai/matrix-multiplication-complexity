@@ -14,8 +14,7 @@
 
 <p align="center">
   <a href="https://jiangxioabai.github.io/matrix-multiplication-complexity/"><strong>Paper website</strong></a> ·
-  <a href="#paper-index"><strong>Paper index</strong></a> ·
-  <a href="#how-to-cite"><strong>How to cite</strong></a>
+  <a href="#paper-index"><strong>Paper index</strong></a>
 </p>
 
 ---
@@ -44,10 +43,6 @@ Click a title for the full abstract or a thumbnail for the figure and its captio
 | **[Batched Top-1 prediction](https://jiangxioabai.github.io/matrix-multiplication-complexity/preprints/exact-batched-top1/)**<br><a href="https://jiangxioabai.github.io/matrix-multiplication-complexity/preprints/exact-batched-top1/#paper-figure"><img src="./preprints/exact-batched-top1/figure.png" width="128" alt="Arithmetic and comparison bounds as query width changes"></a> | Matches the matrix multiplication exponent at square width, even though the output contains only the winning indices. | [PDF](./preprints/exact-batched-top1/paper.pdf) · [BibTeX](./preprints/exact-batched-top1/README.md#citation) |
 | **[Exact delta-rule computation](https://jiangxioabai.github.io/matrix-multiplication-complexity/preprints/delta-rule-work-depth/)**<br><a href="https://jiangxioabai.github.io/matrix-multiplication-complexity/preprints/delta-rule-work-depth/#paper-figure"><img src="./assets/delta-rule-work-depth.png" width="128" alt="Work exponent versus depth exponent for exact delta-rule computation"></a> | Gives parallel work bounds conditional on claimed matrix multiplication exponents and an unconditional reduction from triangular substitution. | [PDF](./preprints/delta-rule-work-depth/paper.pdf) · [BibTeX](./preprints/delta-rule-work-depth/README.md#citation) |
 | **[Deterministic matrix product verification](https://jiangxioabai.github.io/matrix-multiplication-complexity/preprints/deterministic-matrix-product-verification/)**<br><a href="https://jiangxioabai.github.io/matrix-multiplication-complexity/preprints/deterministic-matrix-product-verification/#paper-figure"><img src="./preprints/deterministic-matrix-product-verification/figure.png" width="128" alt="Residual potential before and after a linear tilt"></a> | Shows that verifying a claimed real matrix product has the same arithmetic exponent as computing it. | [PDF](./preprints/deterministic-matrix-product-verification/paper.pdf) · [BibTeX](./preprints/deterministic-matrix-product-verification/README.md#citation) |
-
-## How to cite
-
-Use the BibTeX link for the specific preprint you are citing. Each entry gives the full paper title and lists both co-first authors.
 
 ## Research background
 
