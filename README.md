@@ -46,6 +46,6 @@ Click a title for the full abstract or a thumbnail for the figure and its captio
 
 ## Research background
 
-The anonymous manuscript *Exact Softmax Attention Has the Rectangular Matrix-Multiplication Exponent in Extended Arithmetic Circuits* (2026) proves the lower bound even when each key has a single scalar value. Its exp–log span theorem is used in the analysis of attention I/O in this collection.
+The anonymous manuscript [*Exact Softmax Attention Has the Rectangular Matrix-Multiplication Exponent in Extended Arithmetic Circuits*](https://openreview.net/forum?id=uZLZCV3OA6) (2026) proves the lower bound even when each key has a single scalar value. Its exp–log span theorem is used in the analysis of attention I/O in this collection.
 
 Some bounds use results from the [OpenAI square-exponent preprint](https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md) and the [accompanying square and rectangular exponent results](https://github.com/openai/math/blob/main/lean/docs/107.md).
