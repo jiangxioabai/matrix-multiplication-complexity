@@ -1,4 +1,4 @@
-<h1 align="center">The Complexity of Attention and Matrix Products</h1>
+<h1 align="center">Matrix Multiplication Follow-Ups</h1>
 
 <p align="center">
   <strong>Tao Jiang</strong> and <strong>Minbo Gao</strong><br>
@@ -21,7 +21,9 @@
 
 ---
 
-These preprints study the arithmetic cost, memory demands, and parallel depth of attention and related computations. Matrix multiplication provides a common reference for the results.
+Independent research on what matrix multiplication bounds imply for attention, batched prediction, recurrent computation, and matrix product verification.
+
+Several papers study consequences of recent OpenAI work on square and rectangular matrix multiplication. The papers state where their results depend on those claims. See the [OpenAI square-exponent preprint](https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md) and the [square and rectangular exponent results](https://github.com/openai/math/blob/main/lean/docs/107.md).
 
 <p align="center">
   <a href="./assets/research-map.png"><img src="./assets/research-map.png" width="760" alt="Research map. Matrix multiplication connects two strands: attention kernels, approximation, preprocessing, and resources; and related problems in Top-1 prediction, delta-rule recurrence, and product verification."></a>

@@ -63,6 +63,7 @@ h2 { font-size: clamp(1.45rem, 3vw, 1.9rem); line-height: 1.25; }
 .authors { margin-top: 1rem; font-size: 1.125rem; font-weight: 650; }
 .credit, .kicker, .paper-label, .footer { color: var(--muted); }
 .credit { font-size: 0.95rem; }
+.site-description { max-width: 70ch; margin-top: 0.85rem; }
 .kicker, .paper-label { font-size: 0.9rem; }
 .kicker { margin-bottom: 0.6rem; }
 .map { margin: 0 0 2.5rem; }
