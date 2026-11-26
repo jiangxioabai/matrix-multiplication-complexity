@@ -94,6 +94,8 @@ h2 { font-size: clamp(1.45rem, 3vw, 1.9rem); line-height: 1.25; }
 .reading { max-width: 76ch; border-top: 1px solid var(--rule); padding: 1.5rem 0; }
 .reading p { margin-top: 0.75rem; line-height: 1.75; }
 math { font-size: 1.02em; }
+.paper-figure img { width: min(100%, 35rem); border: 1px solid var(--rule); }
+.paper-figure figcaption { max-width: 67ch; margin-top: 0.7rem; color: var(--muted); font-size: 0.95rem; }
 .citation pre {
   padding: 1rem;
   border: 1px solid var(--rule);
