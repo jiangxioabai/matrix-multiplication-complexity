@@ -25,6 +25,10 @@
 
 How much computation does attention require, and when is it as hard as matrix multiplication? These preprints study how the answer changes with the attention kernel, preprocessing, storage, memory traffic, and parallel depth. Two companion papers ask whether the matrix multiplication exponent also governs problems that return only winning indices or a yes/no verification result.
 
+<p align="center">
+  <a href="./assets/research-map.png"><img src="./assets/research-map.png" width="760" alt="Research map. Matrix multiplication connects two strands: attention kernels, approximation, preprocessing, and resources; and related problems in Top-1 prediction, delta-rule recurrence, and product verification."></a>
+</p>
+
 ## Paper index
 
 ### Attention
