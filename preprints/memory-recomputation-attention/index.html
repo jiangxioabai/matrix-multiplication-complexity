@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Memory–Recomputation Tradeoffs for Exact Attention Backpropagation</title>
+  <link rel="canonical" href="https://jiangxioabai.github.io/research-papers/preprints/memory-recomputation-attention/">
+  <link rel="stylesheet" href="../../assets/pages.css">
+  <meta name="description" content="Abstract and PDF of Memory–Recomputation Tradeoffs for Exact Attention Backpropagation, a preprint by Tao Jiang and Minbo Gao.">
+  <meta name="citation_title" content="Memory–Recomputation Tradeoffs for Exact Attention Backpropagation">
+  <meta name="citation_author" content="Tao Jiang">
+  <meta name="citation_author" content="Minbo Gao">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://jiangxioabai.github.io/research-papers/preprints/memory-recomputation-attention/paper.pdf">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <nav class="shell nav" aria-label="Site navigation">
+      <a class="brand" href="../../">Research preprints</a>
+      <a href="https://github.com/jiangxioabai/research-papers">GitHub repository</a>
+    </nav>
+  </header>
+  <main id="main" class="shell paper">
+    <header class="paper-heading">
+      <p class="kicker">Backpropagation</p>
+      <h1>Memory–Recomputation Tradeoffs for Exact Attention Backpropagation</h1>
+      <p class="authors">Tao Jiang and Minbo Gao</p>
+      <p class="credit">Co-first authors with equal contribution</p>
+      <div class="paper-links">
+        <a class="action" href="paper.pdf" type="application/pdf">Read PDF</a>
+        <a href="#citation">BibTeX</a>
+      </div>
+    </header>
+    <section class="reading" aria-labelledby="abstract">
+      <h2 id="abstract">Abstract</h2>
+      <p>Backpropagation through softmax attention needs the attention matrix, which can either be stored during the forward pass or recomputed during the backward pass. We study this memory–recomputation tradeoff for the gradient with respect to the values, in exact arithmetic circuits with <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mo>&#x0002B;</mo><mo>&#x0002C;</mo><mo>&#x02212;</mo><mo>&#x0002C;</mo><mo>&#x000D7;</mo><mo>&#x0002C;</mo><mo>&#x0002F;</mo><mo>&#x0002C;</mo><mi>exp</mi><mo>&#x0002C;</mo><mi>ln</mi></mrow></math> gates, where the forward pass may store any <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>M</mi></mrow></math> real functions of the queries and keys at no cost. For <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>N</mi></mrow></math> tokens of width <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>d</mi><mo>&#x0003D;</mo><mi>&#x02308;</mi><msup><mi>N</mi><mi>a</mi></msup><mi>&#x02309;</mi></mrow></math>, we show that the optimal backward cost is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mo>max</mo><mo stretchy="false">&#x0007B;</mo><mn>2</mn><mo>&#x0002C;</mo><mspace width="0.167em" /><mi>&#x003C9;</mi><mo stretchy="false">&#x00028;</mo><mi>b</mi><mo>&#x0002C;</mo><mi>a</mi><mo>&#x0002C;</mo><mi>b</mi><mo stretchy="false">&#x00029;</mo><mo stretchy="false">&#x0007D;</mo><mo>&#x0002B;</mo><mi>o</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></msup></mrow></math> when <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>N</mi><mo stretchy="false">&#x00028;</mo><mi>N</mi><mo>&#x02212;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo><mo>&#x02212;</mo><mi>M</mi><mo>&#x0003D;</mo><msup><mi>N</mi><mrow><mn>2</mn><mi>b</mi><mo>&#x0002B;</mo><mi>o</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></msup></mrow></math>, where <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x003C9;</mi><mo stretchy="false">&#x00028;</mo><mi>b</mi><mo>&#x0002C;</mo><mi>a</mi><mo>&#x0002C;</mo><mi>b</mi><mo stretchy="false">&#x00029;</mo></mrow></math> is the exponent of multiplying an <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mi>b</mi></msup><mo>&#x000D7;</mo><msup><mi>N</mi><mi>a</mi></msup></mrow></math> matrix by an <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mi>a</mi></msup><mo>&#x000D7;</mo><msup><mi>N</mi><mi>b</mi></msup></mrow></math> matrix. Consequently, storing <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mn>2</mn><mo>&#x02212;</mo><mi>&#x003B4;</mi></mrow></msup></mrow></math> values, or even all but <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mn>2</mn></msup><mo>&#x0002F;</mo><mi>log</mi><mi>N</mi></mrow></math> of the <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>N</mi><mo stretchy="false">&#x00028;</mo><mi>N</mi><mo>&#x02212;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></math> independent score differences, gives no polynomial saving over storing nothing, and recomputing a square block of unstored scores is optimal. The proof shows that a backward circuit of size <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>s</mi></mrow></math> computes, with tensor rank at most <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mn>2</mn><mi>s</mi></mrow></math>, a linear projection of matrix multiplication of dimension at least <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>N</mi><mo stretchy="false">&#x00028;</mo><mi>N</mi><mo>&#x02212;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo><mo>&#x02212;</mo><mi>M</mi></mrow></math>, using a functional-transcendence argument that accounts jointly for the stored values and their derivatives. A new tensor-rank inequality then recovers a full rectangular matrix product from an arbitrary output projection.</p>
+    </section>
+    <section class="reading citation" aria-labelledby="citation">
+      <h2 id="citation">Citation</h2>
+      <pre><code>@unpublished{jiang-gao-memory-recomputation-attention,
+  title  = {Memory--Recomputation Tradeoffs for Exact Attention Backpropagation},
+  author = {Jiang, Tao and Gao, Minbo},
+  note   = {Preprint}
+}</code></pre>
+    </section>
+  </main>
+  <footer class="shell footer">Tao Jiang and Minbo Gao</footer>
+</body>
+</html>

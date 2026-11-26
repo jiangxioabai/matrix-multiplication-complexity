@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://jiangxioabai.github.io/research-papers/</loc></url>
+  <url><loc>https://jiangxioabai.github.io/research-papers/preprints/strassen-and-tensor-attention/</loc></url>
+  <url><loc>https://jiangxioabai.github.io/research-papers/preprints/exact-polynomial-attention/</loc></url>
+  <url><loc>https://jiangxioabai.github.io/research-papers/preprints/preprocessed-softmax-attention/</loc></url>
+  <url><loc>https://jiangxioabai.github.io/research-papers/preprints/arbitrarily-accurate-softmax-attention/</loc></url>
+  <url><loc>https://jiangxioabai.github.io/research-papers/preprints/memory-recomputation-attention/</loc></url>
+  <url><loc>https://jiangxioabai.github.io/research-papers/preprints/unrestricted-attention-io/</loc></url>
+  <url><loc>https://jiangxioabai.github.io/research-papers/preprints/exact-batched-top1/</loc></url>
+  <url><loc>https://jiangxioabai.github.io/research-papers/preprints/delta-rule-work-depth/</loc></url>
+  <url><loc>https://jiangxioabai.github.io/research-papers/preprints/deterministic-matrix-product-verification/</loc></url>
+</urlset>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>On the Unrestricted I/O Complexity of Exact Softmax Attention</title>
+  <link rel="canonical" href="https://jiangxioabai.github.io/research-papers/preprints/unrestricted-attention-io/">
+  <link rel="stylesheet" href="../../assets/pages.css">
+  <meta name="description" content="Abstract and PDF of On the Unrestricted I/O Complexity of Exact Softmax Attention, a preprint by Tao Jiang and Minbo Gao.">
+  <meta name="citation_title" content="On the Unrestricted I/O Complexity of Exact Softmax Attention">
+  <meta name="citation_author" content="Tao Jiang">
+  <meta name="citation_author" content="Minbo Gao">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://jiangxioabai.github.io/research-papers/preprints/unrestricted-attention-io/paper.pdf">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <nav class="shell nav" aria-label="Site navigation">
+      <a class="brand" href="../../">Research preprints</a>
+      <a href="https://github.com/jiangxioabai/research-papers">GitHub repository</a>
+    </nav>
+  </header>
+  <main id="main" class="shell paper">
+    <header class="paper-heading">
+      <p class="kicker">Memory I/O</p>
+      <h1>On the Unrestricted I/O Complexity of Exact Softmax Attention</h1>
+      <p class="authors">Tao Jiang and Minbo Gao</p>
+      <p class="credit">Co-first authors with equal contribution</p>
+      <div class="paper-links">
+        <a class="action" href="paper.pdf" type="application/pdf">Read PDF</a>
+        <a href="#citation">BibTeX</a>
+      </div>
+    </header>
+    <section class="reading" aria-labelledby="abstract">
+      <h2 id="abstract">Abstract</h2>
+      <p>The I/O complexity of attention counts the words that an algorithm moves between a fast memory of size <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>M</mi></mrow></math> and a slow memory. Known lower bounds for exact attention either fix the computation graph or assume that the algorithm computes the entries of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>Q</mi><msup><mi>K</mi><mo>&#x022A4;</mo></msup></mrow></math>, and below the memory threshold <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>M</mi><mo>&#x0003D;</mo><msup><mi>d</mi><mn>2</mn></msup></mrow></math> they do not determine whether fast matrix multiplication, or an algorithm that never forms the attention scores, can communicate less. We study straight-line algorithms that may perform unlimited arithmetic, exponentials, logarithms and recomputation, and show that for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>N</mi></mrow></math> queries and keys of width <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>d</mi><mo>&#x0003D;</mo><mi>N</mi></mrow></math> and memory <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>M</mi><mo>&#x0003D;</mo><mi>O</mi><mo stretchy="false">&#x00028;</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">&#x00029;</mo></mrow></math>, exact softmax attention requires <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x003A9;</mi><mo stretchy="false">&#x00028;</mo><msup><mi>N</mi><mn>2</mn></msup><mo>&#x0002B;</mo><msup><mi>N</mi><mrow><mn>9</mn><mo>&#x0002F;</mo><mn>4</mn></mrow></msup><mo>&#x0002F;</mo><msup><mi>M</mi><mrow><mn>1</mn><mo>&#x0002F;</mo><mn>8</mn></mrow></msup><mo stretchy="false">&#x00029;</mo></mrow></math> transfers, even with a single scalar value per key. A blocked algorithm built on the exponents of a recent preprint, which determines the matrix multiplication exponent to be <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mn>9</mn><mo>&#x0002F;</mo><mn>4</mn></mrow></math>, matches this bound up to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mi>o</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></msup></mrow></math> factors, so the I/O exponent equals <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mn>9</mn><mo>&#x0002F;</mo><mn>4</mn><mo>&#x02212;</mo><mi>&#x003BC;</mi><mo>&#x0002F;</mo><mn>8</mn></mrow></math> when <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>M</mi><mo>&#x0003D;</mo><mi>&#x00398;</mi><mo stretchy="false">&#x00028;</mo><msup><mi>N</mi><mi>&#x003BC;</mi></msup><mo stretchy="false">&#x00029;</mo></mrow></math>. The lower bound combines an I/O-efficient reverse-mode differentiation lemma, which extracts a matrix product from the gradient of one attention channel, with a tensor inequality, derived from the spectral theory of that preprint, that limits how many tensors of bounded local dimension can sum to a matrix multiplication tensor. For width <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>d</mi><mo>&#x0003D;</mo><msup><mi>N</mi><mi>a</mi></msup></mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>a</mi><mo>&#x0003C;</mo><mn>1</mn></mrow></math>, we give upper and lower bounds on the I/O exponent that coincide at constant memory and at the input-size endpoint.</p>
+    </section>
+    <section class="reading citation" aria-labelledby="citation">
+      <h2 id="citation">Citation</h2>
+      <pre><code>@unpublished{jiang-gao-unrestricted-attention-io,
+  title  = {On the Unrestricted {I/O} Complexity of Exact Softmax Attention},
+  author = {Jiang, Tao and Gao, Minbo},
+  note   = {Preprint}
+}</code></pre>
+    </section>
+  </main>
+  <footer class="shell footer">Tao Jiang and Minbo Gao</footer>
+</body>
+</html>

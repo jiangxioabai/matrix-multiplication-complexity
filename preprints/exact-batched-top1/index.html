@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication</title>
+  <link rel="canonical" href="https://jiangxioabai.github.io/research-papers/preprints/exact-batched-top1/">
+  <link rel="stylesheet" href="../../assets/pages.css">
+  <meta name="description" content="Abstract and PDF of Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication, a preprint by Tao Jiang and Minbo Gao.">
+  <meta name="citation_title" content="Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication">
+  <meta name="citation_author" content="Tao Jiang">
+  <meta name="citation_author" content="Minbo Gao">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://jiangxioabai.github.io/research-papers/preprints/exact-batched-top1/paper.pdf">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <nav class="shell nav" aria-label="Site navigation">
+      <a class="brand" href="../../">Research preprints</a>
+      <a href="https://github.com/jiangxioabai/research-papers">GitHub repository</a>
+    </nav>
+  </header>
+  <main id="main" class="shell paper">
+    <header class="paper-heading">
+      <p class="kicker">Prediction</p>
+      <h1>Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication</h1>
+      <p class="authors">Tao Jiang and Minbo Gao</p>
+      <p class="credit">Co-first authors with equal contribution</p>
+      <div class="paper-links">
+        <a class="action" href="paper.pdf" type="application/pdf">Read PDF</a>
+        <a href="#citation">BibTeX</a>
+      </div>
+    </header>
+    <section class="reading" aria-labelledby="abstract">
+      <h2 id="abstract">Abstract</h2>
+      <p>Exact batched Top-1 prediction asks, given query vectors <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&#x0002C;</mo><mo>&#x02026;</mo><mo>&#x0002C;</mo><msub><mi>x</mi><mi>N</mi></msub></mrow></math> and candidate vectors <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>&#x0002C;</mo><mo>&#x02026;</mo><mo>&#x0002C;</mo><msub><mi>w</mi><mi>N</mi></msub></mrow></math> in <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>&#x0211D;</mi><mi>d</mi></msup></mrow></math>, for the least index maximizing <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x027E8;</mi><msub><mi>x</mi><mi>i</mi></msub><mo>&#x0002C;</mo><msub><mi>w</mi><mi>j</mi></msub><mi>&#x027E9;</mi></mrow></math> for every <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>i</mi></mrow></math>; greedy decoding performs this operation at the output layer of a language model. Computing the full product <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>X</mi><msup><mi>W</mi><mrow><mo>&#x022A4;</mo></mrow></msup></mrow></math> by fast matrix multiplication and scanning its rows takes <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mi>&#x003C9;</mi><mo>&#x0002B;</mo><mi>o</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></msup></mrow></math> operations at <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>d</mi><mo>&#x0003D;</mo><mi>N</mi></mrow></math>, but the output is only a list of indices, and the lower-bound techniques available for such discrete outputs do not reach beyond quadratic cost. We prove that in the real arithmetic model with exact comparisons and branching, every deterministic algorithm at <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>d</mi><mo>&#x0003D;</mo><mi>N</mi></mrow></math> has an execution with at least half the border rank of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x0230A;</mi><mi>N</mi><mo>&#x0002F;</mo><mn>2</mn><mi>&#x0230B;</mi><mo>&#x000D7;</mo><mi>&#x0230A;</mi><mi>N</mi><mo>&#x0002F;</mo><mn>2</mn><mi>&#x0230B;</mi></mrow></math> matrix multiplication in multiplications and divisions, so the complexity is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x003A9;</mi><mo stretchy="false">&#x00028;</mo><msup><mi>N</mi><mrow><mi>&#x003C9;</mi></mrow></msup><mo stretchy="false">&#x00029;</mo></mrow></math> and hence <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mi>&#x003C9;</mi><mo>&#x0002B;</mo><mi>o</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></msup></mrow></math>. The proof rests on a general theorem that extracts a border decomposition of a bilinear map <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>Q</mi></mrow></math> from the sign tests of any comparison tree deciding <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>z</mi><mo>&#x02265;</mo><mi>Q</mi><mo stretchy="false">&#x00028;</mo><mi>u</mi><mo>&#x0002C;</mo><mi>v</mi><mo stretchy="false">&#x00029;</mo></mrow></math>. The lower bound persists with exponential and logarithm gates, on inputs with distinct scores, for Top-<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>k</mi></mrow></math> outputs, and with free separate preprocessing of both matrices; at width <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>d</mi><mo>&#x0003D;</mo><msup><mi>N</mi><mrow><mi>a</mi></mrow></msup></mrow></math> we prove <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x003A9;</mi><mo stretchy="false">&#x00028;</mo><mi>N</mi><msup><mi>d</mi><mrow><mi>&#x003C9;</mi><mo>&#x02212;</mo><mn>1</mn></mrow></msup><mo stretchy="false">&#x00029;</mo></mrow></math> against the upper bound <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mi>&#x003C9;</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo>&#x0002C;</mo><mi>a</mi><mo>&#x0002C;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo><mo>&#x0002B;</mo><mi>o</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></msup></mrow></math>, and show that <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mn>1</mn><mo>&#x0002B;</mo><mi>a</mi><mo>&#x0002B;</mo><mi>o</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></msup></mrow></math> comparisons are necessary and sufficient.</p>
+    </section>
+    <section class="reading citation" aria-labelledby="citation">
+      <h2 id="citation">Citation</h2>
+      <pre><code>@unpublished{jiang-gao-exact-batched-top1,
+  title  = {Exact Batched {Top-1} Prediction Is as Hard as Matrix Multiplication},
+  author = {Jiang, Tao and Gao, Minbo},
+  note   = {Preprint}
+}</code></pre>
+    </section>
+  </main>
+  <footer class="shell footer">Tao Jiang and Minbo Gao</footer>
+</body>
+</html>

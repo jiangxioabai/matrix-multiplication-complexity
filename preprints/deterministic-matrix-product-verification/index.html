@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Deterministic Verification of Real Matrix Products Is as Hard as Multiplication</title>
+  <link rel="canonical" href="https://jiangxioabai.github.io/research-papers/preprints/deterministic-matrix-product-verification/">
+  <link rel="stylesheet" href="../../assets/pages.css">
+  <meta name="description" content="Abstract and PDF of Deterministic Verification of Real Matrix Products Is as Hard as Multiplication, a preprint by Tao Jiang and Minbo Gao.">
+  <meta name="citation_title" content="Deterministic Verification of Real Matrix Products Is as Hard as Multiplication">
+  <meta name="citation_author" content="Tao Jiang">
+  <meta name="citation_author" content="Minbo Gao">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://jiangxioabai.github.io/research-papers/preprints/deterministic-matrix-product-verification/paper.pdf">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <nav class="shell nav" aria-label="Site navigation">
+      <a class="brand" href="../../">Research preprints</a>
+      <a href="https://github.com/jiangxioabai/research-papers">GitHub repository</a>
+    </nav>
+  </header>
+  <main id="main" class="shell paper">
+    <header class="paper-heading">
+      <p class="kicker">Verification</p>
+      <h1>Deterministic Verification of Real Matrix Products Is as Hard as Multiplication</h1>
+      <p class="authors">Tao Jiang and Minbo Gao</p>
+      <p class="credit">Co-first authors with equal contribution</p>
+      <div class="paper-links">
+        <a class="action" href="paper.pdf" type="application/pdf">Read PDF</a>
+        <a href="#citation">BibTeX</a>
+      </div>
+    </header>
+    <section class="reading" aria-labelledby="abstract">
+      <h2 id="abstract">Abstract</h2>
+      <p>Given real matrices <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>A</mi><mo>&#x0002C;</mo><mi>B</mi><mo>&#x0002C;</mo><mi>C</mi></mrow></math>, Freivalds&#x27; algorithm decides whether <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>A</mi><mi>B</mi><mo>&#x0003D;</mo><mi>C</mi></mrow></math> with <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>O</mi><mo stretchy="false">&#x00028;</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">&#x00029;</mo></mrow></math> arithmetic operations if one-sided error is allowed, while the best deterministic method still computes <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>A</mi><mi>B</mi></mrow></math>. Whether deterministic verification over the reals can be faster than multiplication has remained open; known lower bounds apply only to restricted classes of verifiers, and over the integers quadratic-time deterministic verification is possible. We show that it cannot: every deterministic algebraic computation tree that decides <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>A</mi><mi>B</mi><mo>&#x0003D;</mo><mi>C</mi></mrow></math> for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>N</mi><mo>&#x000D7;</mo><mi>N</mi></mrow></math> real matrices has an accepting path with at least <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mi>&#x003C9;</mi></mrow></msup><mo>&#x0002F;</mo><mn>6</mn></mrow></math> multiplications and divisions, so verification and multiplication have the same exponent <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x003C9;</mi></mrow></math>; this remains true with exponential and logarithm gates, and for <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>N</mi><mo>&#x000D7;</mo><msup><mi>N</mi><mi>a</mi></msup></mrow></math> by <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mi>a</mi></msup><mo>&#x000D7;</mo><mi>N</mi></mrow></math> products with exponent <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x003C9;</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo>&#x0002C;</mo><mi>a</mi><mo>&#x0002C;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></math>. These bounds follow from a general theorem: for every real bilinear map <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x003BC;</mi></mrow></math>, any verifier for the graph <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>z</mi><mo>&#x0003D;</mo><mi>&#x003BC;</mi><mo stretchy="false">&#x00028;</mo><mi>x</mi><mo>&#x0002C;</mo><mi>y</mi><mo stretchy="false">&#x00029;</mo></mrow></math> has an accepting path whose number of nonlinear gates is at least one sixth of the border rank of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x003BC;</mi></mrow></math>. The proof tilts the potential formed by the equalities on a frozen accepting path, so that its minimizers become smooth even when the tests vanish to high order on the graph, and then bounds the tensor rank of their mixed second derivatives using the Baur–Strassen theorem.</p>
+    </section>
+    <section class="reading citation" aria-labelledby="citation">
+      <h2 id="citation">Citation</h2>
+      <pre><code>@unpublished{jiang-gao-deterministic-matrix-product-verification,
+  title  = {Deterministic Verification of Real Matrix Products Is as Hard as Multiplication},
+  author = {Jiang, Tao and Gao, Minbo},
+  note   = {Preprint}
+}</code></pre>
+    </section>
+  </main>
+  <footer class="shell footer">Tao Jiang and Minbo Gao</footer>
+</body>
+</html>

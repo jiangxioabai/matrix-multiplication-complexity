@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>The Arithmetic Complexity of Exact Polynomial Attention</title>
+  <link rel="canonical" href="https://jiangxioabai.github.io/research-papers/preprints/exact-polynomial-attention/">
+  <link rel="stylesheet" href="../../assets/pages.css">
+  <meta name="description" content="Abstract and PDF of The Arithmetic Complexity of Exact Polynomial Attention, a preprint by Tao Jiang and Minbo Gao.">
+  <meta name="citation_title" content="The Arithmetic Complexity of Exact Polynomial Attention">
+  <meta name="citation_author" content="Tao Jiang">
+  <meta name="citation_author" content="Minbo Gao">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://jiangxioabai.github.io/research-papers/preprints/exact-polynomial-attention/paper.pdf">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <nav class="shell nav" aria-label="Site navigation">
+      <a class="brand" href="../../">Research preprints</a>
+      <a href="https://github.com/jiangxioabai/research-papers">GitHub repository</a>
+    </nav>
+  </header>
+  <main id="main" class="shell paper">
+    <header class="paper-heading">
+      <p class="kicker">Polynomial attention</p>
+      <h1>The Arithmetic Complexity of Exact Polynomial Attention</h1>
+      <p class="authors">Tao Jiang and Minbo Gao</p>
+      <p class="credit">Co-first authors with equal contribution</p>
+      <div class="paper-links">
+        <a class="action" href="paper.pdf" type="application/pdf">Read PDF</a>
+        <a href="#citation">BibTeX</a>
+      </div>
+    </header>
+    <section class="reading" aria-labelledby="abstract">
+      <h2 id="abstract">Abstract</h2>
+      <p>Polynomial attention replaces the exponential kernel of softmax attention by a fixed polynomial, such as the degree-<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>r</mi></mrow></math> Taylor truncation of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>e</mi><mi>x</mi></msup></mrow></math>. We study the exact arithmetic complexity of normalized polynomial attention with <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>N</mi></mrow></math> queries and keys of width <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>d</mi><mo>&#x0003D;</mo><msup><mi>N</mi><mi>a</mi></msup></mrow></math>, in the extended arithmetic circuit model with unrestricted <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>exp</mi></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>ln</mi></mrow></math> gates, where exact softmax attention has recently been shown to require <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mi>&#x003C9;</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo>&#x0002C;</mo><mi>a</mi><mo>&#x0002C;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo><mi>&#x000B1;</mi><mi>o</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo></mrow></msup></mrow></math> operations. We first show that, for every fixed even degree, exponential and logarithm gates, normalization, and correctness on only an open set of inputs can all be removed with constant overhead, which reduces the problem to the algebraic complexity of the unnormalized numerator. For quadratic attention we then determine the exponent exactly: it is <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>&#x003C9;</mi><mo stretchy="false">&#x00028;</mo><mn>1</mn><mo>&#x0002C;</mo><mi>a</mi><mo>&#x0002C;</mo><mi>a</mi><mo stretchy="false">&#x00029;</mo></mrow></math>. For higher degrees, polynomial selectors embed a direct sum of <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><msup><mi>N</mi><mrow><mo>min</mo><mo stretchy="false">&#x0007B;</mo><mo stretchy="false">&#x00028;</mo><mi>r</mi><mo>&#x02212;</mo><mn>2</mn><mo stretchy="false">&#x00029;</mo><mi>a</mi><mo>&#x0002C;</mo><mspace width="0.167em" /><mn>1</mn><mo>&#x02212;</mo><mi>a</mi><mo stretchy="false">&#x0007D;</mo></mrow></msup></mrow></math> independent rectangular matrix products into a single attention call, which yields a degree-dependent lower bound. Under the recently claimed closed form for rectangular matrix multiplication exponents, quadratic attention has exponent <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mn>1</mn><mo>&#x0002B;</mo><mi>a</mi><mo>&#x0002B;</mo><msup><mi>a</mi><mn>2</mn></msup><mo>&#x0002F;</mo><mn>4</mn></mrow></math>, every even degree <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>r</mi><mo>&#x02265;</mo><mn>4</mn></mrow></math> is strictly harder than quadratic attention whenever <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>a</mi><mo>&#x0003C;</mo><mn>1</mn></mrow></math>, and degree <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>r</mi></mrow></math> remains strictly easier than softmax attention whenever <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mrow><mi>a</mi><mo>&#x0003C;</mo><mn>4</mn><mo stretchy="false">&#x00028;</mo><msqrt><mn>2</mn></msqrt><mo>&#x02212;</mo><mn>1</mn><mo stretchy="false">&#x00029;</mo><mo>&#x0002F;</mo><mi>r</mi></mrow></math>.</p>
+    </section>
+    <section class="reading citation" aria-labelledby="citation">
+      <h2 id="citation">Citation</h2>
+      <pre><code>@unpublished{jiang-gao-exact-polynomial-attention,
+  title  = {The Arithmetic Complexity of Exact Polynomial Attention},
+  author = {Jiang, Tao and Gao, Minbo},
+  note   = {Preprint}
+}</code></pre>
+    </section>
+  </main>
+  <footer class="shell footer">Tao Jiang and Minbo Gao</footer>
+</body>
+</html>
