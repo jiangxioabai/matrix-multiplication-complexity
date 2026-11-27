@@ -4,138 +4,263 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Matrix Multiplication and the Complexity of Attention</title>
+  <title>When Is Matrix Multiplication Unavoidable?</title>
+  <meta name="description" content="Arithmetic Complexity of Attention, Learning, and Verification. Research by Tao Jiang and Minbo Gao.">
   <link rel="canonical" href="https://jiangxioabai.github.io/matrix-multiplication-complexity/">
-  <link rel="stylesheet" href="assets/pages.css">
-  <meta name="description" content="Research on matrix multiplication and the complexity of attention, batched prediction, recurrence, and product verification.">
+  <link rel="stylesheet" href="assets/research.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="masthead">
-    <nav class="shell nav" aria-label="Site navigation">
-      <a class="brand" href="./">Matrix Multiplication</a>
-      <a href="https://github.com/jiangxioabai/matrix-multiplication-complexity">GitHub repository</a>
-    </nav>
+    <div class="shell masthead-inner">
+      <a class="site-name" href="./">Matrix Multiplication Complexity</a>
+      <nav class="primary-nav" aria-label="Site navigation">
+        <a href="#research-map">Research map</a>
+        <a href="#paper-index">Papers</a>
+        <a href="#research-background">Background</a>
+        <a href="https://github.com/jiangxioabai/matrix-multiplication-complexity">GitHub</a>
+      </nav>
+    </div>
   </header>
-  <main id="main" class="shell home">
-    <header class="intro">
-      <h1>Matrix Multiplication and the Complexity of Attention</h1>
-      <p class="authors">Tao Jiang<sup>*</sup> and Minbo Gao<sup>*</sup></p>
-      <p class="credit">* Equal contribution (co-first authors).</p>
-      <p class="site-description">A standard attention algorithm forms the query–key score matrix and uses it to compute a weighted sum for each query. Our starting question is whether computing those sums can be asymptotically cheaper than forming the scores.</p>
+  <main id="main" class="shell">
+    <header class="hero">
+      <div>
+        <h1>When Is Matrix Multiplication Unavoidable?</h1>
+        <p class="subtitle">Arithmetic Complexity of Attention, Learning, and Verification</p>
+      </div>
+      <div class="byline">
+        <p class="authors"><span><a href="mailto:jiangt@ios.ac.cn">Tao Jiang</a><sup>*</sup></span> and <span><a href="mailto:gaomb@ios.ac.cn">Minbo Gao</a><sup>*</sup></span></p>
+        <p class="credit">* Equal contribution (co-first authors).</p>
+        <p class="affiliations">Institute of Software, Chinese Academy of Sciences</p>
+        <p class="affiliations">School of Computer Science and Technology, University of Chinese Academy of Sciences</p>
+      </div>
     </header>
-    <figure class="map">
-      <img src="assets/research-map.png" width="2320" height="904"
-           alt="Research map connecting attention kernels, approximation, and resources with batched Top-1 prediction, delta-rule recurrence, and matrix product verification through matrix multiplication.">
-    </figure>
-    <section class="collection" aria-labelledby="attention">
-      <h2 id="attention">Attention</h2>
-      <ul class="paper-list">
-        <li>
-          <div>
-            <p class="paper-label">Higher-order attention</p>
-            <a class="paper-title" href="preprints/strassen-and-tensor-attention/">Matrix Multiplication Lower Bounds for Strassen Attention and a Faster Algorithm for Tensor Attention</a>
-          </div>
-          <a class="pdf-link" href="preprints/strassen-and-tensor-attention/paper.pdf" aria-label="PDF for Matrix Multiplication Lower Bounds for Strassen Attention and a Faster Algorithm for Tensor Attention">PDF</a>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Polynomial attention</p>
-            <a class="paper-title" href="preprints/exact-polynomial-attention/">The Arithmetic Complexity of Exact Polynomial Attention</a>
-          </div>
-          <a class="pdf-link" href="preprints/exact-polynomial-attention/paper.pdf" aria-label="PDF for The Arithmetic Complexity of Exact Polynomial Attention">PDF</a>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Cache preprocessing</p>
-            <a class="paper-title" href="preprints/preprocessed-softmax-attention/">Preprocessed Softmax Attention Is as Hard as Matrix Multiplication</a>
-          </div>
-          <a class="pdf-link" href="preprints/preprocessed-softmax-attention/paper.pdf" aria-label="PDF for Preprocessed Softmax Attention Is as Hard as Matrix Multiplication">PDF</a>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Cache updates</p>
-            <a class="paper-title" href="preprints/exact-transformer-cache-updates/">Exact Transformer Cache Updates Are as Hard as Matrix Multiplication</a>
-          </div>
-          <a class="pdf-link" href="preprints/exact-transformer-cache-updates/paper.pdf" aria-label="PDF for Exact Transformer Cache Updates Are as Hard as Matrix Multiplication">PDF</a>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Attention precision</p>
-            <a class="paper-title" href="preprints/arbitrarily-accurate-softmax-attention/">The Arithmetic Cost of Precision in One-Channel Softmax Attention</a>
-            <p>At square width, the gate exponent is two when the number of accuracy bits is subpolynomial in the sequence length. At sufficiently small error, it is the matrix multiplication exponent.</p>
-          </div>
-          <div>
-            <a class="pdf-link" href="preprints/arbitrarily-accurate-softmax-attention/paper.pdf" aria-label="PDF for The Arithmetic Cost of Precision in One-Channel Softmax Attention">PDF</a><br>
-            <a class="pdf-link" href="preprints/arbitrarily-accurate-softmax-attention/#citation" aria-label="BibTeX for The Arithmetic Cost of Precision in One-Channel Softmax Attention">BibTeX</a>
-          </div>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Backpropagation</p>
-            <a class="paper-title" href="preprints/memory-recomputation-attention/">Memory–Recomputation Tradeoffs for Exact Attention Backpropagation</a>
-          </div>
-          <a class="pdf-link" href="preprints/memory-recomputation-attention/paper.pdf" aria-label="PDF for Memory–Recomputation Tradeoffs for Exact Attention Backpropagation">PDF</a>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Memory I/O</p>
-            <a class="paper-title" href="preprints/unrestricted-attention-io/">On the Unrestricted I/O Complexity of Exact Softmax Attention</a>
-          </div>
-          <a class="pdf-link" href="preprints/unrestricted-attention-io/paper.pdf" aria-label="PDF for On the Unrestricted I/O Complexity of Exact Softmax Attention">PDF</a>
-        </li>
-      </ul>
+    <section class="overview" aria-label="Research overview">
+      <p class="question">Which problems inherit the cost of matrix multiplication without returning the product? When can that cost be avoided?</p>
+      <p class="overview-copy">These papers study exact computation and approximation in attention, prediction, verification, and learning. They trace how the cost changes with the kernel, precision, available information, and resource being counted.</p>
     </section>
-    <section class="collection" aria-labelledby="related-computations">
-      <h2 id="related-computations">Related computations</h2>
-      <ul class="paper-list">
-        <li>
-          <div>
-            <p class="paper-label">Prediction</p>
-            <a class="paper-title" href="preprints/exact-batched-top1/">Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication</a>
-          </div>
-          <a class="pdf-link" href="preprints/exact-batched-top1/paper.pdf" aria-label="PDF for Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication">PDF</a>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Ridge regression</p>
-            <a class="paper-title" href="preprints/exact-ridge-prediction/">A Single Ridge Regression Prediction Is as Hard as Matrix Multiplication</a>
-          </div>
-          <a class="pdf-link" href="preprints/exact-ridge-prediction/paper.pdf" aria-label="PDF for A Single Ridge Regression Prediction Is as Hard as Matrix Multiplication">PDF</a>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Batched Delta Rule</p>
-            <a class="paper-title" href="preprints/delta-rule-work-depth/">The Arithmetic Complexity of Batched Delta-Rule Readouts</a>
-            <p>Determines the optimal work exponent for exact batched Delta Rule readouts when value channels share keys, queries, and gates.</p>
-          </div>
-          <div>
-            <a class="pdf-link" href="preprints/delta-rule-work-depth/paper.pdf" aria-label="PDF for The Arithmetic Complexity of Batched Delta-Rule Readouts">PDF</a><br>
-            <a class="pdf-link" href="preprints/delta-rule-work-depth/#citation" aria-label="BibTeX for The Arithmetic Complexity of Batched Delta-Rule Readouts">BibTeX</a>
-          </div>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Verification</p>
-            <a class="paper-title" href="preprints/deterministic-matrix-product-verification/">Deterministic Verification of Real Matrix Products Is as Hard as Multiplication</a>
-          </div>
-          <a class="pdf-link" href="preprints/deterministic-matrix-product-verification/paper.pdf" aria-label="PDF for Deterministic Verification of Real Matrix Products Is as Hard as Multiplication">PDF</a>
-        </li>
-        <li>
-          <div>
-            <p class="paper-label">Gradient clipping</p>
-            <a class="paper-title" href="preprints/exact-per-example-gradient-clipping/">The Arithmetic Complexity of Exact Per-Example Gradient Clipping</a>
-          </div>
-          <a class="pdf-link" href="preprints/exact-per-example-gradient-clipping/paper.pdf" aria-label="PDF for The Arithmetic Complexity of Exact Per-Example Gradient Clipping">PDF</a>
-        </li>
-      </ul>
+    <section class="research-map" id="research-map" aria-labelledby="map-title">
+      <div class="map-heading">
+        <h2 id="map-title">Research map</h2>
+        <p class="map-question">Which tasks inherit the cost of matrix multiplication, and when can it be avoided?</p>
+      </div>
+      <div class="map-grid">
+        <section class="map-theme theme-kernels" aria-labelledby="map-kernels">
+          <h3 id="map-kernels"><span class="theme-index" aria-hidden="true">I</span><a href="#attention">Attention Kernels and Precision</a></h3>
+          <ul>
+            <li><a href="preprints/strassen-and-tensor-attention/">Higher-order attention</a></li>
+            <li><a href="preprints/exact-polynomial-attention/">Polynomial attention</a></li>
+            <li><a href="preprints/arbitrarily-accurate-softmax-attention/">Attention precision</a></li>
+          </ul>
+        </section>
+        <section class="map-theme theme-resources" aria-labelledby="map-resources">
+          <h3 id="map-resources"><span class="theme-index" aria-hidden="true">II</span><a href="#resources">Computational Resource Tradeoffs</a></h3>
+          <ul>
+            <li><a href="preprints/preprocessed-softmax-attention/">Preprocessed attention</a></li>
+            <li><a href="preprints/exact-transformer-cache-updates/">Transformer cache updates</a></li>
+            <li><a href="preprints/memory-recomputation-attention/">Attention backpropagation</a></li>
+            <li><a href="preprints/unrestricted-attention-io/">Attention I/O</a></li>
+          </ul>
+        </section>
+        <section class="map-theme theme-prediction" aria-labelledby="map-prediction">
+          <h3 id="map-prediction"><span class="theme-index" aria-hidden="true">III</span><a href="#related-computations">Prediction and Verification</a></h3>
+          <ul>
+            <li><a href="preprints/exact-batched-top1/">Batched top-1 prediction</a></li>
+            <li><a href="preprints/exact-ridge-prediction/">Ridge regression prediction</a></li>
+            <li><a href="preprints/deterministic-matrix-product-verification/">Matrix product verification</a></li>
+          </ul>
+        </section>
+        <section class="map-theme theme-learning" aria-labelledby="map-learning">
+          <h3 id="map-learning"><span class="theme-index" aria-hidden="true">IV</span><a href="#learning">Learning and Recurrence</a></h3>
+          <ul>
+            <li><a href="preprints/delta-rule-work-depth/">Delta-rule readouts</a></li>
+            <li><a href="preprints/exact-per-example-gradient-clipping/">Per-example gradient clipping</a></li>
+          </ul>
+        </section>
+      </div>
     </section>
-    <section class="reading" aria-labelledby="research-background">
-      <h2 id="research-background">Research background</h2>
-      <p>The anonymous manuscript <cite><a href="https://openreview.net/forum?id=uZLZCV3OA6">Exact Softmax Attention Has the Rectangular Matrix-Multiplication Exponent in Extended Arithmetic Circuits</a></cite> (2026) proves the lower bound even when each key has a single scalar value. Its exp–log span theorem is used in the analysis of attention I/O in this collection.</p>
-      <p>Some bounds use results from the <a href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md">OpenAI square-exponent preprint</a> and the <a href="https://github.com/openai/math/blob/main/lean/docs/107.md">accompanying square and rectangular exponent results</a>.</p>
+    <section id="paper-index" aria-labelledby="papers-title">
+      <h2 id="papers-title" class="section-heading">Research themes and papers</h2>
+      <section class="paper-theme theme-kernels" id="attention" aria-labelledby="theme-kernels">
+        <div class="theme-heading">
+          <span class="theme-index" aria-hidden="true">I</span>
+          <h3 id="theme-kernels">Attention Kernels and Precision</h3>
+          <p>How do the scoring kernel and the required precision change the arithmetic cost of attention?</p>
+        </div>
+        <ul class="paper-list">
+          <li class="paper-entry">
+            <h4><a href="preprints/strassen-and-tensor-attention/">Matrix Multiplication Lower Bounds for Strassen Attention and a Faster Algorithm for Tensor Attention</a></h4>
+            <p>In exact real arithmetic circuits with exponential and logarithm gates, normalized Strassen attention has the square matrix multiplication exponent for widths up to the sequence length, including width one. For tensor attention, a crossing identity gives an algorithm whose numerical speedups use the stated rectangular exponent formula.</p>
+            <div class="paper-links">
+              <a href="preprints/strassen-and-tensor-attention/" aria-label="Abstract for Matrix Multiplication Lower Bounds for Strassen Attention and a Faster Algorithm for Tensor Attention">Abstract</a>
+              <a href="preprints/strassen-and-tensor-attention/paper.pdf" aria-label="PDF for Matrix Multiplication Lower Bounds for Strassen Attention and a Faster Algorithm for Tensor Attention">PDF</a>
+              <a href="preprints/strassen-and-tensor-attention/#citation" aria-label="BibTeX for Matrix Multiplication Lower Bounds for Strassen Attention and a Faster Algorithm for Tensor Attention">BibTeX</a>
+            </div>
+          </li>
+          <li class="paper-entry">
+            <h4><a href="preprints/exact-polynomial-attention/">The Arithmetic Complexity of Exact Polynomial Attention</a></h4>
+            <p>For exact normalized quadratic Taylor attention at width <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><msup><mi>N</mi><mi>a</mi></msup></mrow></math> with fixed 0 &lt; a ≤ 1, the arithmetic exponent is <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>ω</mi><mo>(</mo><mn>1</mn><mo>,</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo>)</mo></mrow></math>, even with exponential and logarithm gates. For higher fixed even Taylor degrees, polynomial selectors give degree-dependent lower bounds.</p>
+            <div class="paper-links">
+              <a href="preprints/exact-polynomial-attention/" aria-label="Abstract for The Arithmetic Complexity of Exact Polynomial Attention">Abstract</a>
+              <a href="preprints/exact-polynomial-attention/paper.pdf" aria-label="PDF for The Arithmetic Complexity of Exact Polynomial Attention">PDF</a>
+              <a href="preprints/exact-polynomial-attention/#citation" aria-label="BibTeX for The Arithmetic Complexity of Exact Polynomial Attention">BibTeX</a>
+            </div>
+          </li>
+          <li class="paper-entry">
+            <h4><a href="preprints/arbitrarily-accurate-softmax-attention/">The Arithmetic Cost of Precision in One-Channel Softmax Attention</a></h4>
+            <p>For one-channel softmax on the full coordinate cube with unscaled scores, square-width extended arithmetic circuits have exponent two when the worst-case absolute error stays below a fixed constant less than one and the number of accuracy bits is subpolynomial. The square matrix multiplication exponent is recovered at an explicitly doubly exponentially small error. The intervening complexity remains open.</p>
+            <div class="paper-links">
+              <a href="preprints/arbitrarily-accurate-softmax-attention/" aria-label="Abstract for The Arithmetic Cost of Precision in One-Channel Softmax Attention">Abstract</a>
+              <a href="preprints/arbitrarily-accurate-softmax-attention/paper.pdf" aria-label="PDF for The Arithmetic Cost of Precision in One-Channel Softmax Attention">PDF</a>
+              <a href="preprints/arbitrarily-accurate-softmax-attention/#citation" aria-label="BibTeX for The Arithmetic Cost of Precision in One-Channel Softmax Attention">BibTeX</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="paper-theme theme-resources" id="resources" aria-labelledby="theme-resources">
+        <div class="theme-heading">
+          <span class="theme-index" aria-hidden="true">II</span>
+          <h3 id="theme-resources">Computational Resource Tradeoffs</h3>
+          <p>What can be saved by preparing data in advance, keeping intermediate values, or moving fewer words?</p>
+        </div>
+        <ul class="paper-list">
+          <li class="paper-entry">
+            <h4><a href="preprints/preprocessed-softmax-attention/">Preprocessed Softmax Attention Is as Hard as Matrix Multiplication</a></h4>
+            <p>Even with unrestricted cache preprocessing, exact real arithmetic circuits with exponential and logarithm gates require <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>Θ</mi><mo>(</mo><mi>N</mi><mi>d</mi><mo>)</mo></mrow></math> work for one query, for almost every key matrix and every nonconstant scalar value vector. At fixed power-law batch sizes and widths, the batched exponent is the corresponding rectangular matrix multiplication exponent. Sequential online queries pay the single-query cost in each round.</p>
+            <div class="paper-links">
+              <a href="preprints/preprocessed-softmax-attention/" aria-label="Abstract for Preprocessed Softmax Attention Is as Hard as Matrix Multiplication">Abstract</a>
+              <a href="preprints/preprocessed-softmax-attention/paper.pdf" aria-label="PDF for Preprocessed Softmax Attention Is as Hard as Matrix Multiplication">PDF</a>
+              <a href="preprints/preprocessed-softmax-attention/#citation" aria-label="BibTeX for Preprocessed Softmax Attention Is as Hard as Matrix Multiplication">BibTeX</a>
+            </div>
+          </li>
+          <li class="paper-entry">
+            <h4><a href="preprints/exact-transformer-cache-updates/">Exact Transformer Cache Updates Are as Hard as Matrix Multiplication</a></h4>
+            <p>For causal attention-only Transformers, even after arbitrary preprocessing of context and weights, one scalar edit can make an exact cache update in extended arithmetic circuits cost the square matrix multiplication exponent at three layers and width proportional to sequence length. At square width, one or two layers admit quadratic work for one edit.</p>
+            <div class="paper-links">
+              <a href="preprints/exact-transformer-cache-updates/" aria-label="Abstract for Exact Transformer Cache Updates Are as Hard as Matrix Multiplication">Abstract</a>
+              <a href="preprints/exact-transformer-cache-updates/paper.pdf" aria-label="PDF for Exact Transformer Cache Updates Are as Hard as Matrix Multiplication">PDF</a>
+              <a href="preprints/exact-transformer-cache-updates/#citation" aria-label="BibTeX for Exact Transformer Cache Updates Are as Hard as Matrix Multiplication">BibTeX</a>
+            </div>
+          </li>
+          <li class="paper-entry">
+            <h4><a href="preprints/memory-recomputation-attention/">Memory–Recomputation Tradeoffs for Exact Attention Backpropagation</a></h4>
+            <p>Determines the backward exponent for the exact value gradient in circuits with arithmetic, exponential, and logarithm gates, when an uncharged forward circuit stores at most M reals from the queries and keys. At width <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><msup><mi>N</mi><mi>a</mi></msup></mrow></math>, if the budget leaves a deficit <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>N</mi><mo>(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>−</mo><mi>M</mi><mo>=</mo><msup><mi>N</mi><mrow><mn>2</mn><mi>b</mi><mo>+</mo><mrow><mi>o</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></msup></mrow></math> relative to storing every independent score difference, the work exponent is <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>max</mi><mo>{</mo><mn>2</mn><mo>,</mo><mrow><mi>ω</mi><mo>(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow><mo>}</mo></mrow></math>. Recomputing a square block attains this exponent.</p>
+            <div class="paper-links">
+              <a href="preprints/memory-recomputation-attention/" aria-label="Abstract for Memory–Recomputation Tradeoffs for Exact Attention Backpropagation">Abstract</a>
+              <a href="preprints/memory-recomputation-attention/paper.pdf" aria-label="PDF for Memory–Recomputation Tradeoffs for Exact Attention Backpropagation">PDF</a>
+              <a href="preprints/memory-recomputation-attention/#citation" aria-label="BibTeX for Memory–Recomputation Tradeoffs for Exact Attention Backpropagation">BibTeX</a>
+            </div>
+          </li>
+          <li class="paper-entry">
+            <h4><a href="preprints/unrestricted-attention-io/">On the Unrestricted I/O Complexity of Exact Softmax Attention</a></h4>
+            <p>For one-channel exact softmax at square width, fixed read/write schedules with unrestricted recomputation have a lower bound of <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>Ω</mi><mo>(</mo><msup><mi>N</mi><mn>2</mn></msup><mo>+</mo><mfrac><msup><mi>N</mi><mrow><mn>9</mn><mo>/</mo><mn>4</mn></mrow></msup><msup><mi>M</mi><mrow><mn>1</mn><mo>/</mo><mn>8</mn></mrow></msup></mfrac><mo>)</mo></mrow></math> word transfers, where M is the fast-memory size and is at most on the order of the square of the sequence length. A blocked algorithm matches it up to subpolynomial factors when memory grows as a fixed power of the sequence length. The lower bound uses a tensor inequality derived from OpenAI&#x27;s spectral theory, and the upper bound uses the reported rectangular exponents.</p>
+            <div class="paper-links">
+              <a href="preprints/unrestricted-attention-io/" aria-label="Abstract for On the Unrestricted I/O Complexity of Exact Softmax Attention">Abstract</a>
+              <a href="preprints/unrestricted-attention-io/paper.pdf" aria-label="PDF for On the Unrestricted I/O Complexity of Exact Softmax Attention">PDF</a>
+              <a href="preprints/unrestricted-attention-io/#citation" aria-label="BibTeX for On the Unrestricted I/O Complexity of Exact Softmax Attention">BibTeX</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="paper-theme theme-prediction" id="related-computations" aria-labelledby="theme-prediction">
+        <div class="theme-heading">
+          <span class="theme-index" aria-hidden="true">III</span>
+          <h3 id="theme-prediction">Prediction and Verification</h3>
+          <p>Can returning only an index, a scalar, or a yes/no answer avoid the cost of the underlying product?</p>
+        </div>
+        <ul class="paper-list">
+          <li class="paper-entry">
+            <h4><a href="preprints/exact-batched-top1/">Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication</a></h4>
+            <p>With as many queries and candidates as coordinates, deterministic exact arithmetic comparison trees need the square matrix multiplication exponent to return only the least maximizing index for each query. At smaller fixed-polynomial widths the paper gives separate upper and lower bounds.</p>
+            <div class="paper-links">
+              <a href="preprints/exact-batched-top1/" aria-label="Abstract for Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication">Abstract</a>
+              <a href="preprints/exact-batched-top1/paper.pdf" aria-label="PDF for Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication">PDF</a>
+              <a href="preprints/exact-batched-top1/#citation" aria-label="BibTeX for Exact Batched Top-1 Prediction Is as Hard as Matrix Multiplication">BibTeX</a>
+            </div>
+          </li>
+          <li class="paper-entry">
+            <h4><a href="preprints/exact-ridge-prediction/">A Single Ridge Regression Prediction Is as Hard as Matrix Multiplication</a></h4>
+            <p>A single exact ridge prediction from a design with N rows and width <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><msup><mi>N</mi><mi>a</mi></msup></mrow></math> for fixed 0 &lt; a ≤ 1 has exponent <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>ω</mi><mo>(</mo><mi>a</mi><mo>,</mo><mn>1</mn><mo>,</mo><mi>a</mi><mo>)</mo></mrow></math>. The matching lower bound applies to real arithmetic circuits even with exponential and logarithm gates.</p>
+            <div class="paper-links">
+              <a href="preprints/exact-ridge-prediction/" aria-label="Abstract for A Single Ridge Regression Prediction Is as Hard as Matrix Multiplication">Abstract</a>
+              <a href="preprints/exact-ridge-prediction/paper.pdf" aria-label="PDF for A Single Ridge Regression Prediction Is as Hard as Matrix Multiplication">PDF</a>
+              <a href="preprints/exact-ridge-prediction/#citation" aria-label="BibTeX for A Single Ridge Regression Prediction Is as Hard as Matrix Multiplication">BibTeX</a>
+            </div>
+          </li>
+          <li class="paper-entry">
+            <h4><a href="preprints/deterministic-matrix-product-verification/">Deterministic Verification of Real Matrix Products Is as Hard as Multiplication</a></h4>
+            <p>Deterministic real computation trees for deciding <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>A</mi><mi>B</mi><mo>=</mo><mi>C</mi></mrow></math> have the arithmetic exponent of multiplication, including with exponential and logarithm gates. The proof extracts border rank from verification of a general bilinear graph. The paper discusses independent concurrent work.</p>
+            <div class="paper-links">
+              <a href="preprints/deterministic-matrix-product-verification/" aria-label="Abstract for Deterministic Verification of Real Matrix Products Is as Hard as Multiplication">Abstract</a>
+              <a href="preprints/deterministic-matrix-product-verification/paper.pdf" aria-label="PDF for Deterministic Verification of Real Matrix Products Is as Hard as Multiplication">PDF</a>
+              <a href="preprints/deterministic-matrix-product-verification/#citation" aria-label="BibTeX for Deterministic Verification of Real Matrix Products Is as Hard as Multiplication">BibTeX</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="paper-theme theme-learning" id="learning" aria-labelledby="theme-learning">
+        <div class="theme-heading">
+          <span class="theme-index" aria-hidden="true">IV</span>
+          <h3 id="theme-learning">Learning and Recurrence</h3>
+          <p>When inputs share structure or outputs are aggregated, which independent products still determine the work?</p>
+        </div>
+        <ul class="paper-list">
+          <li class="paper-entry">
+            <h4><a href="preprints/delta-rule-work-depth/">The Arithmetic Complexity of Batched Delta-Rule Readouts</a></h4>
+            <p>For exact batched delta-rule readouts at <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>d</mi><mo>=</mo><mi>N</mi></mrow></math>, with <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>m</mi><mo>=</mo><msup><mi>N</mi><mrow><mi>b</mi><mo>+</mo><mrow><mi>o</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></msup></mrow></math> value channels sharing keys, queries, and gates for fixed <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>0</mn><mo>&lt;</mo><mi>b</mi><mo>≤</mo><mn>1</mn></mrow></math>, the optimal work exponent is <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>1</mn><mo>−</mo><mi>b</mi><mo>+</mo><mrow><mi>ω</mi><mo>(</mo><mn>1</mn><mo>,</mo><mi>b</mi><mo>,</mo><mi>b</mi><mo>)</mo></mrow></mrow></math>. It evaluates to <math xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn><mo>+</mo><mrow><mfrac><msup><mi>b</mi><mn>2</mn></msup><mn>4</mn></mfrac></mrow></mrow></math> under the stated rectangular exponent formula. The lower bound applies at any depth.</p>
+            <div class="paper-links">
+              <a href="preprints/delta-rule-work-depth/" aria-label="Abstract for The Arithmetic Complexity of Batched Delta-Rule Readouts">Abstract</a>
+              <a href="preprints/delta-rule-work-depth/paper.pdf" aria-label="PDF for The Arithmetic Complexity of Batched Delta-Rule Readouts">PDF</a>
+              <a href="preprints/delta-rule-work-depth/#citation" aria-label="BibTeX for The Arithmetic Complexity of Batched Delta-Rule Readouts">BibTeX</a>
+            </div>
+          </li>
+          <li class="paper-entry">
+            <h4><a href="preprints/exact-per-example-gradient-clipping/">The Arithmetic Complexity of Exact Per-Example Gradient Clipping</a></h4>
+            <p>For a single linear layer, exact clipped gradient aggregation in real computation trees with square roots and comparisons costs, up to subpolynomial factors, the larger of one batched matrix product and a family of independent per-example products.</p>
+            <div class="paper-links">
+              <a href="preprints/exact-per-example-gradient-clipping/" aria-label="Abstract for The Arithmetic Complexity of Exact Per-Example Gradient Clipping">Abstract</a>
+              <a href="preprints/exact-per-example-gradient-clipping/paper.pdf" aria-label="PDF for The Arithmetic Complexity of Exact Per-Example Gradient Clipping">PDF</a>
+              <a href="preprints/exact-per-example-gradient-clipping/#citation" aria-label="BibTeX for The Arithmetic Complexity of Exact Per-Example Gradient Clipping">BibTeX</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section class="research-connections" id="connections" aria-labelledby="connections-title">
+      <h2 id="connections-title" class="section-heading">Connections across themes</h2>
+      <div class="connection-grid">
+        <div>
+          <h3>What small outputs can reveal</h3>
+          <p>The <a href="preprints/exact-batched-top1/">Top-1</a> lower bound extracts a bilinear map from sign tests. <a href="preprints/exact-ridge-prediction/">Ridge prediction</a> extracts a product from a polynomial associated with a single prediction, and <a href="preprints/deterministic-matrix-product-verification/">product verification</a> uses an accepting path. Each argument exploits a different property of the output.</p>
+        </div>
+        <div>
+          <h3>What can be shared</h3>
+          <p>Joint queries can share arithmetic even when <a href="preprints/preprocessed-softmax-attention/">cache preprocessing</a> leaves the single-query exponent unchanged. <a href="preprints/delta-rule-work-depth/">Batched delta-rule readouts</a> and <a href="preprints/exact-per-example-gradient-clipping/">gradient clipping</a> both recover families of independent products, from shared recurrence parameters and from clipped aggregation, respectively.</p>
+        </div>
+        <div>
+          <h3>Where the cost can fall</h3>
+          <p>The <a href="preprints/exact-polynomial-attention/">polynomial attention</a> and <a href="preprints/arbitrarily-accurate-softmax-attention/">precision</a> papers alter the kernel and the error tolerance, respectively. <a href="preprints/unrestricted-attention-io/">Attention I/O</a> keeps the exact softmax task and changes the resource counted to word transfers.</p>
+        </div>
+      </div>
+      <figure class="connection-figure">
+        <a href="preprints/delta-rule-work-depth/#paper-figure"><img src="assets/delta-rule-work-depth.png" width="1524" height="600" alt="Two rounds of the delta-rule construction, showing how the mixed coefficients of the readouts recover two independent matrix products." loading="lazy"></a>
+        <figcaption>In the delta-rule lower bound, each group of readouts contributes a matrix of mixed coefficients. A scaled difference between consecutive rounds isolates one independent rectangular product.</figcaption>
+      </figure>
+    </section>
+    <section class="background" id="research-background" aria-labelledby="background-title">
+      <h2 id="background-title" class="section-heading">Research background</h2>
+      <ul class="background-list">
+        <li>The anonymous manuscript <a href="https://openreview.net/forum?id=uZLZCV3OA6">Exact Softmax Attention Has the Rectangular Matrix-Multiplication Exponent in Extended Arithmetic Circuits</a> establishes a lower bound for exact attention even with a single scalar value per key. Its exp–log span theorem is used in the analysis of attention I/O.</li>
+        <li>The <a href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/README.md">OpenAI square-exponent preprint</a> reports a square matrix multiplication exponent of 9/4. The attention I/O paper derives a tensor inequality from that work&#x27;s spectral theory.</li>
+        <li>The accompanying <a href="https://github.com/openai/math/blob/main/lean/docs/107.md">square and rectangular exponent results</a> are used where a paper specializes a symbolic bound to numerical exponents. The papers state the assumptions behind those specializations.</li>
+      </ul>
     </section>
   </main>
-  <footer class="shell footer">Tao Jiang and Minbo Gao</footer>
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <p>Tao Jiang and Minbo Gao</p>
+      <a href="https://github.com/jiangxioabai/matrix-multiplication-complexity">GitHub repository</a>
+    </div>
+  </footer>
 </body>
 </html>
