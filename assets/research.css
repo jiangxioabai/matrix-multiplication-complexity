@@ -72,7 +72,13 @@ math { font-size: 1.04em; }
 .theme-heading h3 { margin-block: 0.35rem 0.62rem; font-size: clamp(1.45rem, 3vw, 2rem); letter-spacing: -0.025em; }
 .theme-heading p { max-inline-size: 28ch; color: var(--muted); font-size: 0.94rem; }
 .paper-list { list-style: none; padding: 0; }
-.paper-entry { padding-block: 1.05rem; }
+.paper-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) min(34%, 18rem);
+  align-items: center;
+  gap: 1rem clamp(1rem, 2.25vw, 2rem);
+  padding-block: 1.25rem;
+}
 .paper-entry + .paper-entry { border-block-start: 1px solid var(--subtle-rule); }
 .paper-entry:first-child { padding-block-start: 0; }
 .paper-entry:last-child { padding-block-end: 0; }
@@ -82,6 +88,14 @@ math { font-size: 1.04em; }
 .paper-entry p { max-inline-size: 69ch; margin-top: 0.37rem; color: var(--muted); font-size: 0.93rem; }
 .paper-links { display: flex; flex-wrap: wrap; gap: 0.22rem 1.25rem; margin-top: 0.48rem; font-size: 0.82rem; }
 .paper-links a { display: inline-block; padding-block: 0.12rem; }
+.paper-preview {
+  display: block;
+  outline: 1px solid var(--subtle-rule);
+  background: white;
+  cursor: zoom-in;
+}
+.paper-preview img { inline-size: 100%; }
+.paper-preview:hover { outline-color: var(--accent); }
 
 .research-connections, .background { margin-top: 4.5rem; }
 .connection-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem 2.35rem; padding-block: 1.65rem 1.8rem; }
@@ -102,6 +116,11 @@ math { font-size: 1.04em; }
   .connection-grid { gap: 1rem 1.45rem; }
 }
 
+@media (max-width: 58rem) {
+  .paper-theme { grid-template-columns: 1fr; }
+  .theme-heading p { max-inline-size: 60ch; }
+}
+
 @media (max-width: 43rem) {
   .shell { width: calc(100% - 2rem); }
   .masthead-inner { display: grid; padding-block: 0.9rem; }
@@ -117,9 +136,11 @@ math { font-size: 1.04em; }
   .map-grid .map-theme { border-inline-start: 0; padding-inline: 0; padding-block: 0.85rem 1rem; }
   .map-theme ul { gap: 0.15rem 1.05rem; margin-top: 0.4rem; }
   .research-map { margin-bottom: 3.4rem; }
-  .paper-theme { grid-template-columns: 1fr; padding-block: 1.3rem 1.55rem; }
+  .paper-theme { padding-block: 1.3rem 1.55rem; }
   .theme-heading p { max-inline-size: 43ch; }
+  .paper-entry { grid-template-columns: 1fr; }
   .paper-entry:first-child { border-block-start: 1px solid var(--subtle-rule); padding-block-start: 0.8rem; }
+  .paper-preview { inline-size: min(100%, 34rem); }
   .connection-grid, .connection-figure { grid-template-columns: 1fr; }
   .connection-figure figcaption { max-inline-size: 54ch; }
   .research-connections, .background, .footer { margin-top: 3.2rem; }
