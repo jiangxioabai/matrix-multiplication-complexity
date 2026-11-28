@@ -1,18 +1,26 @@
-# When Is Matrix Multiplication Unavoidable?
+<h1 align="center">When Is Matrix Multiplication Unavoidable?</h1>
 
-*Arithmetic Complexity of Attention, Learning, and Verification*
+<p align="center">
+  <em>Arithmetic Complexity of Attention, Learning, and Verification</em>
+</p>
 
-**Tao Jiang**<sup>*</sup> and **Minbo Gao**<sup>*</sup>
+<p align="center">
+  <strong>Tao Jiang</strong><sup>*</sup> and <strong>Minbo Gao</strong><sup>*</sup><br>
+  <em>* Equal contribution (co-first authors).</em>
+</p>
 
-\* Equal contribution (co-first authors).
+<p align="center">
+  Institute of Software, Chinese Academy of Sciences<br>
+  School of Computer Science and Technology, University of Chinese Academy of Sciences<br>
+  <a href="mailto:jiangt@ios.ac.cn">jiangt@ios.ac.cn</a> ·
+  <a href="mailto:gaomb@ios.ac.cn">gaomb@ios.ac.cn</a>
+</p>
 
-Institute of Software, Chinese Academy of Sciences
-
-School of Computer Science and Technology, University of Chinese Academy of Sciences
-
-[jiangt@ios.ac.cn](mailto:jiangt@ios.ac.cn) · [gaomb@ios.ac.cn](mailto:gaomb@ios.ac.cn)
-
-[Research website](https://jiangxioabai.github.io/matrix-multiplication-complexity/) · [Research map](https://jiangxioabai.github.io/matrix-multiplication-complexity/#research-map) · [Paper index](#paper-index)
+<p align="center">
+  <a href="https://jiangxioabai.github.io/matrix-multiplication-complexity/">Research website</a> ·
+  <a href="https://jiangxioabai.github.io/matrix-multiplication-complexity/#research-map">Research map</a> ·
+  <a href="#paper-index">Paper index</a>
+</p>
 
 Which problems inherit the cost of matrix multiplication without returning the product? When can that cost be avoided?
 
