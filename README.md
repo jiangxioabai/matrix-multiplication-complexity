@@ -17,9 +17,9 @@
 </p>
 
 <p align="center">
-  <a href="https://jiangxioabai.github.io/matrix-multiplication-complexity/">Research website</a> ·
+  <a href="https://jiangxioabai.github.io/matrix-multiplication-complexity/">Website</a> ·
   <a href="https://jiangxioabai.github.io/matrix-multiplication-complexity/#research-map">Research map</a> ·
-  <a href="#paper-index">Paper index</a>
+  <a href="#paper-index">Papers</a>
 </p>
 
 Which problems inherit the cost of matrix multiplication without returning the product? When can that cost be avoided?
